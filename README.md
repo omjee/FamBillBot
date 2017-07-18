@@ -4,7 +4,7 @@
 How much time does it take to recharge/ top-up your mobile? Let’s say, 5 minutes. This seems like a short time but, imagine spending 5 minutes while you are busy at work or during a vacation. Many a times, your family members might ask you to recharge their mobile phones, especially those who are not very comfortable using gadgets. Amidst your busy schedule, there are high chances of you forgetting and they might end up in trouble.
 
 ## What it does
-To help you relax and relieve you from this tedious job, we bring you the “FamBillBot”.  Just give the mobile number, mobile operator & the amount and the bot does the recharge for you in seconds. Your family members can do the recharge for themselves and you will get notified about the transaction.
+To help you relax and relieve you from this tedious job, we bring you the `FamBillBot`.  Just give the mobile number, mobile operator & the amount and the bot does the recharge for you in seconds. Your family members can do the recharge for themselves and you will get notified about the transaction.
 
 ## How we built it
 We built this using Amazon Lex, Lambda, Simple Queue Service(SQS) and API Gateway. We have also used Twitter banking API and a mobile application.
