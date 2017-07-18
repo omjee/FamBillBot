@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+tweetpy/__init__.py
+tweetpy/twitter.py
+tweetpy.egg-info/PKG-INFO
+tweetpy.egg-info/SOURCES.txt
+tweetpy.egg-info/dependency_links.txt
+tweetpy.egg-info/not-zip-safe
+tweetpy.egg-info/requires.txt
+tweetpy.egg-info/top_level.txt

@@ -1,0 +1,221 @@
+{
+    "name": "ManageBillsBot",
+    "description": null,
+    "intents": [
+        {
+            "intentName": "MobileRecharge",
+            "intentVersion": "16"
+        },
+        {
+            "intentName": "GreetUser",
+            "intentVersion": "2"
+        }
+    ],
+    "clarificationPrompt": {
+        "messages": [
+            {
+                "contentType": "PlainText",
+                "content": "Sorry, can you please repeat that?"
+            }
+        ],
+        "maxAttempts": 5,
+        "responseCard": null
+    },
+    "abortStatement": {
+        "messages": [
+            {
+                "contentType": "PlainText",
+                "content": "Sorry, I could not understand. Goodbye."
+            }
+        ],
+        "responseCard": null
+    },
+    "status": "READY",
+    "failureReason": null,
+    "lastUpdatedDate": "2017-07-16T17:50:13.983Z",
+    "createdDate": "2017-07-16T17:49:52.215Z",
+    "idleSessionTTLInSeconds": 300,
+    "voiceId": "Salli",
+    "checksum": "71143b9d-0ad6-48a5-a942-0e568c396c15",
+    "version": "10",
+    "locale": "en-US",
+    "childDirected": false,
+    "dependencies": {
+        "intents": [
+            {
+                "name": "MobileRecharge",
+                "description": null,
+                "slots": [
+                    {
+                        "name": "amount",
+                        "description": null,
+                        "slotConstraint": "Required",
+                        "slotType": "AMAZON.NUMBER",
+                        "slotTypeVersion": null,
+                        "valueElicitationPrompt": {
+                            "messages": [
+                                {
+                                    "contentType": "PlainText",
+                                    "content": "How much rupees you would like to recharge?"
+                                }
+                            ],
+                            "maxAttempts": 2,
+                            "responseCard": null
+                        },
+                        "priority": 3,
+                        "sampleUtterances": [],
+                        "responseCard": null
+                    },
+                    {
+                        "name": "mobileNumber",
+                        "description": null,
+                        "slotConstraint": "Required",
+                        "slotType": "MobileNumber",
+                        "slotTypeVersion": "1",
+                        "valueElicitationPrompt": {
+                            "messages": [
+                                {
+                                    "contentType": "PlainText",
+                                    "content": "What is the mobile number?"
+                                }
+                            ],
+                            "maxAttempts": 2,
+                            "responseCard": null
+                        },
+                        "priority": 1,
+                        "sampleUtterances": [],
+                        "responseCard": null
+                    },
+                    {
+                        "name": "operatorType",
+                        "description": null,
+                        "slotConstraint": "Required",
+                        "slotType": "operator",
+                        "slotTypeVersion": "2",
+                        "valueElicitationPrompt": {
+                            "messages": [
+                                {
+                                    "contentType": "PlainText",
+                                    "content": "What is the network operator?"
+                                }
+                            ],
+                            "maxAttempts": 2,
+                            "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"\",\"subTitle\":\"\",\"title\":\"\",\"buttons\":[]}]}"
+                        },
+                        "priority": 2,
+                        "sampleUtterances": [],
+                        "responseCard": null
+                    }
+                ],
+                "sampleUtterances": [
+                    "I want to top up my mobile",
+                    "I would like to recharge my mobile",
+                    "I want to recharge my mobile",
+                    "Mobile recharge"
+                ],
+                "confirmationPrompt": {
+                    "messages": [
+                        {
+                            "contentType": "PlainText",
+                            "content": "Are you sure you would like to recharge your mobile number {mobileNumber} with {amount} Rs.?"
+                        }
+                    ],
+                    "maxAttempts": 3,
+                    "responseCard": null
+                },
+                "rejectionStatement": {
+                    "messages": [
+                        {
+                            "contentType": "PlainText",
+                            "content": "Okay. Your recharge will not be done."
+                        }
+                    ],
+                    "responseCard": null
+                },
+                "dialogCodeHook": {
+                    "uri": "arn:aws:lambda:us-east-1:829930321021:function:BillPay",
+                    "messageVersion": "1.0"
+                },
+                "fulfillmentActivity": {
+                    "type": "CodeHook",
+                    "codeHook": {
+                        "uri": "arn:aws:lambda:us-east-1:829930321021:function:BillPay",
+                        "messageVersion": "1.0"
+                    }
+                },
+                "parentIntentSignature": null,
+                "lastUpdatedDate": "2017-07-16T13:07:31.638Z",
+                "createdDate": "2017-07-16T13:07:31.638Z",
+                "version": "16",
+                "checksum": "e70f5cb5-92d1-4cf4-9213-834712778843"
+            },
+            {
+                "name": "GreetUser",
+                "description": null,
+                "slots": [],
+                "sampleUtterances": [
+                    "Hi",
+                    "Hello"
+                ],
+                "fulfillmentActivity": {
+                    "type": "CodeHook",
+                    "codeHook": {
+                        "uri": "arn:aws:lambda:us-east-1:829930321021:function:GreetUser",
+                        "messageVersion": "1.0"
+                    }
+                },
+                "parentIntentSignature": null,
+                "lastUpdatedDate": "2017-07-16T13:30:14.563Z",
+                "createdDate": "2017-07-16T13:30:14.563Z",
+                "version": "2",
+                "checksum": "3f984cbf-00d9-46c7-b539-5d9c45e91b8b"
+            }
+        ],
+        "slotTypes": [
+            {
+                "name": "MobileNumber",
+                "description": "Mobile number",
+                "enumerationValues": [
+                    {
+                        "value": "9780145674"
+                    }
+                ],
+                "lastUpdatedDate": "2017-07-05T05:10:36.544Z",
+                "createdDate": "2017-07-05T05:10:36.544Z",
+                "version": "1",
+                "checksum": null
+            },
+            {
+                "name": "operator",
+                "description": "Network operator",
+                "enumerationValues": [
+                    {
+                        "value": "BSNL"
+                    },
+                    {
+                        "value": "AIRCEL"
+                    },
+                    {
+                        "value": "IDEA"
+                    },
+                    {
+                        "value": "AIRTEL"
+                    },
+                    {
+                        "value": "VODAFONE"
+                    },
+                    {
+                        "value": "DOCOMO"
+                    },
+                    {
+                        "value": "MTS"
+                    }
+                ],
+                "lastUpdatedDate": "2017-07-10T14:33:45.910Z",
+                "createdDate": "2017-07-10T14:33:45.910Z",
+                "version": "2",
+                "checksum": null
+            }
+        ]
+    }
+}

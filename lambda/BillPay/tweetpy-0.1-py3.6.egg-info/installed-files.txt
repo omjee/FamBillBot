@@ -1,0 +1,10 @@
+..\tweetpy\twitter.py
+..\tweetpy\__init__.py
+..\tweetpy\__pycache__\twitter.cpython-36.pyc
+..\tweetpy\__pycache__\__init__.cpython-36.pyc
+dependency_links.txt
+not-zip-safe
+PKG-INFO
+requires.txt
+SOURCES.txt
+top_level.txt
