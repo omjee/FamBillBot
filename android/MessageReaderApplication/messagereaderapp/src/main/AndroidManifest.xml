@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.softwareag.mobiledivision.messagereaderapplication">
+    <uses-permission-sdk-23 android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission-sdk-23 android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/chatbotmain"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/chatbotmain"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <uses-permission-sdk-23 android:name="android.permission.READ_SMS" />
+        <uses-permission-sdk-23 android:name="android.permission.INTERNET"/>
+        <uses-permission-sdk-23 android:name="android.permission.RECEIVE_SMS" />
+        <activity android:name=".MessageReader">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+
+    </application>
+    <activity android:name="SmsReciever" android:enabled="true"
+        android:exported="true"
+        android:permission="android.permission.RECEIVE_SMS" >
+        <uses-permission-sdk-23 android:name="android.permission.READ_SMS" />
+        <uses-permission-sdk-23 android:name="android.permission.INTERNET"/>
+        <uses-permission-sdk-23 android:name="android.permission.RECEIVE_SMS" />
+
+        <intent-filter>
+            <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+        </intent-filter>
+    </activity>
+
+</manifest>
